@@ -1,6 +1,5 @@
 var mongo = require('mongodb');
 var assert = require('assert');
-process.on('uncaughtException', console.error);
 
 require('dotenv').config({
   silent: true

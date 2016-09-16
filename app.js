@@ -2,6 +2,7 @@ var express=require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 var urlConverter=require('./modules/url-converter');
+process.on('uncaughtException', console.error);
 require('dotenv').config({
   silent: true
 });;
