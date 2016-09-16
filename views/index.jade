@@ -1,0 +1,37 @@
+doctype html
+html(lang='en')
+  head
+    title URL minifier Microservice
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro', rel='stylesheet')
+    style.
+      body{
+      font-family: 'Open Sans Condensed', sans-serif;
+      background-color: #00796B;
+      color: white;
+      }
+  
+        li{
+      margin-top:2%;
+      margin-bottom:2%;
+      }
+      .well{
+          color: black;
+          font-family: 'Source Sans Pro', sans-serif;
+          box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+      }
+  body
+    h1.text-center Timestamp Microservice API
+    #container.container.well
+      p You can send:
+      p
+        ul
+          li
+            | A URL. Ex: 
+            a(href='https://urlshortenertool.herokuapp.com/new/https://www.google.com', target='_blank') https://urlshortenertool.herokuapp.com/new/https://www.google.com
+      
+      p
+        | You will get as a result a JSON with the following format:
+      b {"original_url": "https://www.google.com" ,"showrt_url": "https://urlshortenertool.herokuapp.com/5145"}
