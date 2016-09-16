@@ -26,16 +26,16 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 /* GET home page. */
 app.get('/',function(req,res,next){
-  
+
     res.render('index', { title: 'Express' });
-  
+
 });
 
 
 app.get('/:id', function(req, res, next) {
-  
+
    var id=req.params.id;
-     urlConverter.redirectToShortURL(id,res);
+     urlConverter.redirectToShortURL(id,res, next);
 
 });
 
@@ -44,7 +44,7 @@ app.get('/new/*', function(req, res, next) {
 
   var url = req.url.replace('/new/','');
 
-  urlConverter.shortenURL(url).then(obj=> {return res.json(obj);});
+  urlConverter.shortenURL(url).then(obj=> {return res.json(obj);}).catch(next);
 
 });
 
