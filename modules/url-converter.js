@@ -1,8 +1,9 @@
 var mongo = require('mongodb');
 var assert = require('assert');
 
-var mongoUrl="mongodb://localhost:27017/urls";
-
+require('dotenv').config({
+  silent: true
+});;
 
 
 module.exports = {
@@ -34,7 +35,7 @@ module.exports = {
     var responseObject= {original_url: url};
     
     
-   return mongo.MongoClient.connect(mongoUrl)
+   return mongo.MongoClient.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/urls')
      
      .then(function(db,err){
        if (err) {
@@ -70,7 +71,7 @@ module.exports = {
   redirectToShortURL:function(id,res){
 
    // check mongo database for the id, get the url  related to that id and redirect the user to that url   
-      mongo.connect(mongoUrl,function(err,db){
+      mongo.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/urls',function(err,db){
         assert.equal(null,err);
         db.collection('urls').findOne({ urlNumber : id }, (err, document)=> {
            console.log("Redirecting user to:"+ document.originalUrl);

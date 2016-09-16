@@ -2,7 +2,9 @@ var express=require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 var urlConverter=require('./modules/url-converter');
-
+require('dotenv').config({
+  silent: true
+});;
 
 
 var app = express();
