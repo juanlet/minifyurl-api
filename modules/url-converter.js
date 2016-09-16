@@ -1,6 +1,5 @@
 var mongo = require('mongodb');
 var assert = require('assert');
-var Promise = require("bluebird");
 
 var mongoUrl="mongodb://localhost:27017/urls";
 
